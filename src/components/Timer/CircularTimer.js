@@ -14,12 +14,12 @@ const Timer = ({ secondsLeft, totalSeconds }) => {
       <CircularProgress
           variant="determinate"
           value={progress}
-          size={200}
-          thickness={2}
+          size={250}
+          thickness={4}
           // style={{ color: theme.palette.primary.main }}
         />
         <Typography
-          variant="h4"
+          variant="h3"
           component="div"
           style={{
             position: 'absolute',

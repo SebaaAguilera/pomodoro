@@ -1,23 +1,24 @@
 import { useState, useEffect, useCallback } from 'react'
-import Timer from './Timer'
+import CircularTimer from './CircularTimer'
 import PlayPauseButton from './PlayPauseButton'
 import ResetButton from './ResetButton'
 
-const POMODORO_TIME = 25 * 60 // 25 minutes in seconds
-
-const PomodoroTimer = () => {
-
+const PomodoroTimer = ({ timer, totalSeconds }) => {
   const [isActive, setIsActive] = useState(false)
-  const [secondsLeft, setSecondsLeft] = useState(POMODORO_TIME)
-
+  const [secondsLeft, setSecondsLeft] = useState(0)
+  
   const toggleTimer = useCallback(() => {
     setIsActive(prevIsActive => !prevIsActive)
   }, [])
 
   const resetTimer = useCallback(() => {
     setIsActive(false)
-    setSecondsLeft(POMODORO_TIME)
-  }, [])
+    setSecondsLeft(totalSeconds)
+  }, [totalSeconds])
+
+  useEffect(() => {
+    resetTimer()
+  }, [resetTimer])
 
   useEffect(() => {
     let interval
@@ -29,7 +30,6 @@ const PomodoroTimer = () => {
       // Handle timer completion (e.g., display a notification)
       clearInterval(interval)
     }
-
     return () => {
       clearInterval(interval)
     }
@@ -37,7 +37,7 @@ const PomodoroTimer = () => {
   
   return (
     <>
-      <Timer isActive={isActive} secondsLeft={secondsLeft} totalSeconds={POMODORO_TIME}/>
+      <CircularTimer isActive={isActive} secondsLeft={secondsLeft} totalSeconds={totalSeconds}/>
       <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
         <PlayPauseButton isActive={isActive} toggle={toggleTimer}/>
         <ResetButton reset={resetTimer}/>

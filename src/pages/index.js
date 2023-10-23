@@ -1,10 +1,28 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import PomodoroTimer from '@/components/PomodoroTimer'
+import { useCallback, useState } from 'react'
+import Timer from '@/components/Timer'
+import TimerSelect from '@/components/TimerSelect'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const timerSeconds = {
+  POMODORO: 25 * 60,
+  SHORT_BREAK: 5 * 60,
+  LONG_BREAK: 20 * 60, 
+}
+
+
 export default function Home() {
+  
+  const [timer, setTimer] = useState('POMODORO')
+  const [totalSeconds, setTotalSeconds] = useState(timerSeconds[timer])
+
+  const updateTimer = useCallback((newTimer) => () => {
+    setTimer(newTimer)
+    setTotalSeconds(timerSeconds[newTimer])
+  }, [])
+
   return (
     <>
       <Head>
@@ -14,7 +32,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <PomodoroTimer />
+        <Timer timer={timer} totalSeconds={totalSeconds}/>
+        <TimerSelect timer={timer} updateTimer={updateTimer}/>
       </main>
     </>
   )
