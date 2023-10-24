@@ -3,7 +3,7 @@ import CircularTimer from './CircularTimer'
 import PlayPauseButton from './PlayPauseButton'
 import ResetButton from './ResetButton'
 
-const PomodoroTimer = ({ timer, totalSeconds }) => {
+const PomodoroTimer = ({ timer, timersSeconds }) => {
   const [isActive, setIsActive] = useState(false)
   const [secondsLeft, setSecondsLeft] = useState(0)
   
@@ -13,8 +13,8 @@ const PomodoroTimer = ({ timer, totalSeconds }) => {
 
   const resetTimer = useCallback(() => {
     setIsActive(false)
-    setSecondsLeft(totalSeconds)
-  }, [totalSeconds])
+    setSecondsLeft(timersSeconds[timer])
+  }, [timer, timersSeconds])
 
   useEffect(() => {
     resetTimer()
@@ -37,7 +37,7 @@ const PomodoroTimer = ({ timer, totalSeconds }) => {
   
   return (
     <>
-      <CircularTimer isActive={isActive} secondsLeft={secondsLeft} totalSeconds={totalSeconds}/>
+      <CircularTimer isActive={isActive} secondsLeft={secondsLeft} totalSeconds={timersSeconds[timer]}/>
       <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
         <PlayPauseButton isActive={isActive} toggle={toggleTimer}/>
         <ResetButton reset={resetTimer}/>

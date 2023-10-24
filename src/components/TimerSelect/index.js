@@ -25,7 +25,7 @@ const TimerSelect = ({ timer, updateTimer }) => {
         </>
         :
         <Button
-          variant="contained"
+          variant="outlined"
           color="primary"
           onClick={updateTimer("POMODORO")}
           >
