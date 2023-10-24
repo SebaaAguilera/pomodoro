@@ -47,41 +47,43 @@ export default function Home() {
         height: '100vh'
       }}
       >
-      <Typography
-        variant="h2"
-        component="div"
-        fontWeight={700}
-        sx={{
-          marginBottom: 5
-        }}
-      >
-        NeuralClocks
-      </Typography>
-
-      <Typography variant="body1" paragraph>
-        Immerse yourself in productivity with NeuralClocks, our streamlined Pomodoro Timer, meticulously crafted by NeuralWorks Developers. Features include:
-      </Typography>
       
-      <List>
-        <CustomListItem icon={<WorkIcon />} >
-          <strong>Simplicity Redefined:</strong> Experience a clutter-free interface that sharpens your focus, eliminating distractions.
-        </CustomListItem>
-        <CustomListItem icon={<AccessTimeIcon />} >
-          <strong>Flexible Timers:</strong> Tailor work and break durations to match your workflow, ensuring peak productivity.
-        </CustomListItem>
-        <CustomListItem icon={<PeopleIcon />} >
-          <strong>Collaborative Workspaces:</strong> Create private rooms and share unique links with friends or colleagues for seamless teamwork.
-        </CustomListItem>
-        <CustomListItem icon={<SyncIcon />} >
-          <strong>Real-Time Sync:</strong> Stay in perfect harmony with peers through synchronized timers, enabling seamless collaboration.
-        </CustomListItem>
-      </List>
+      <Box sx={{ marginBottom: 4 }}>
+        <Typography
+          variant="h2"
+          component="div"
+          fontWeight={700}
+          sx={{ marginTop: 10, marginBottom: 4 }}
+          >
+          NeuralClocks
+        </Typography>
 
-      <Typography variant="body1" paragraph>
-        Enjoy distraction-free work sessions that enhance your productivity with NeuralClocks. Experience the difference today.
-      </Typography>
+        <Typography variant="body1" paragraph>
+          Immerse yourself in productivity with NeuralClocks, our streamlined Pomodoro Timer, meticulously crafted by NeuralWorks Developers. Features include:
+        </Typography>
+        
+        <List>
+          <CustomListItem icon={<WorkIcon />} >
+            <strong>Simplicity Redefined:</strong> Experience a clutter-free interface that sharpens your focus, eliminating distractions.
+          </CustomListItem>
+          <CustomListItem icon={<AccessTimeIcon />} >
+            <strong>Flexible Timers:</strong> Tailor work and break durations to match your workflow, ensuring peak productivity.
+          </CustomListItem>
+          <CustomListItem icon={<PeopleIcon />} >
+            <strong>Collaborative Workspaces:</strong> Create private rooms and share unique links with friends or colleagues for seamless teamwork.
+          </CustomListItem>
+          <CustomListItem icon={<SyncIcon />} >
+            <strong>Real-Time Sync:</strong> Stay in perfect harmony with peers through synchronized timers, enabling seamless collaboration.
+          </CustomListItem>
+        </List>
 
-      <Box sx={{ display: 'flex', gap: 2, marginTop: 5 }}>
+        <Typography variant="body1" paragraph>
+          Enjoy distraction-free work sessions that enhance your productivity with NeuralClocks. Experience the difference today.
+        </Typography>
+      </Box>
+
+      
+      <Box sx={{ display: 'flex', gap: 2, marginBottom: 15 }}>
         <Button href="/pomodoro" variant="contained" color="primary">
           Create a Room
         </Button>

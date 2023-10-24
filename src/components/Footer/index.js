@@ -18,26 +18,30 @@ function Footer() {
     <Box sx={{
       display: 'flex',
       flexDirection: isMobile ? 'column' : 'row',
-      justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
-      gap: 10,
-      position: 'fixed',
+      position: isMobile ? '' : 'fixed',
       bottom: 0,
       width: '100%',
       paddingInline: 10
     }}>
+      <Box sx={{ flex: 1 }}>
         <Typography variant="body2">
           © {new Date().getFullYear()} NeuralClocks. All rights reserved.
         </Typography>
+      </Box>
+      <Box sx={{ flex: 1 }}>
         <Typography variant="body2">
           Developed by NeuralWorks
         </Typography>
-        <Link href="/" color="inherit" sx={{ marginLeft: 8 }}>
+      </Box>
+      <Box sx={{ flex: 1 }}>
+        <Link href="/" color="inherit">
           <Typography variant="body2">
             Privacy Policy
           </Typography>
         </Link>
+      </Box>
     </Box>
   );
 }
