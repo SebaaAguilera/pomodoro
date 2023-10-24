@@ -1,9 +1,26 @@
 import Button from '@mui/material/Button'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from '@mui/material'
+import { getTimeFromSeconds } from '@/utils/time'
 
-const TimerSelect = ({ timer, updateTimer }) => {
+const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
+
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   const isPomodoro = timer === 'POMODORO'
+  const shortBreakTime = getTimeFromSeconds(timersSeconds.SHORT_BREAK)
+  const longBreakTime = getTimeFromSeconds(timersSeconds.LONG_BREAK)
+
   return (
-    <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', gap: 10 }}>
+    <div
+      style={{
+        marginTop: '20px',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: 10
+      }}>
       {
         isPomodoro ?
         <>
@@ -11,15 +28,17 @@ const TimerSelect = ({ timer, updateTimer }) => {
             variant="contained"
             color="primary"
             onClick={updateTimer("SHORT_BREAK")}
+            sx={{ width: isMobile ? "100%" : "50%" }}
           >
-            Short break
+            Short break - { shortBreakTime }
           </Button>
           <Button
             variant="contained"
-            color="secondary"
+            color="primary"
             onClick={updateTimer("LONG_BREAK")}
+            sx={{ width: isMobile ? "100%" : "50%" }}
           >
-            Long break
+            Long break - { longBreakTime }
           </Button>
         </>
         :
@@ -27,6 +46,7 @@ const TimerSelect = ({ timer, updateTimer }) => {
           variant="outlined"
           color="primary"
           onClick={updateTimer("POMODORO")}
+          fullWidth
           >
           Back to Pomodoro
         </Button>

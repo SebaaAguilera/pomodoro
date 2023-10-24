@@ -1,13 +1,15 @@
 import CircularProgress from '@mui/material/CircularProgress'
 import Typography from '@mui/material/Typography'
+import { getTimeFromSeconds } from '@/utils/time'
+
+const getProgress = ({ value, total }) => {
+  return (value / total) * 100
+}
 
 const Timer = ({ secondsLeft, totalSeconds }) => {
   
-  const progress = getProgress(secondsLeft / totalSeconds)
-
-  const remainingMinutes = getMinutes(secondsLeft)
-  const remainingSeconds = getSecondsRest(secondsLeft)
-  const formattedTime = getFormattedTime({ minutes: remainingMinutes, seconds: remainingSeconds })
+  const progress = getProgress({ value: secondsLeft, total: totalSeconds })
+  const formattedTime = getTimeFromSeconds(secondsLeft)
 
   return (
     <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
@@ -16,17 +18,17 @@ const Timer = ({ secondsLeft, totalSeconds }) => {
           value={progress}
           size={250}
           thickness={4}
-          // style={{ color: theme.palette.primary.main }}
+          sx={{ clipPath: 'circle(50% at 50% 50%)' }}
         />
         <Typography
-          variant="h3"
+          variant="h2"
           component="div"
+          fontWeight={700}
           style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            // color: theme.palette.text.primary,
           }}
         >
           {formattedTime}
@@ -35,26 +37,6 @@ const Timer = ({ secondsLeft, totalSeconds }) => {
   )
 }
 
-const getMinutes = (seconds) => {
-  return Math.floor(seconds / 60)
-}
 
-const getSecondsRest = (seconds) => {
-  return seconds % 60
-}
-
-const getCuratedMeasure = (measure) => {
-  return String(measure).padStart(2, '0')
-}
-
-const getFormattedTime = ({ minutes, seconds }) => {
-  const curatedMinutes = getCuratedMeasure(minutes)
-  const curatedSeconds = getCuratedMeasure(seconds)
-  return `${curatedMinutes} : ${curatedSeconds}`
-}
-
-const getProgress = ({ value, total }) => {
-  return (value / total) * 100
-}
 
 export default Timer

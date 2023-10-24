@@ -7,7 +7,7 @@ import Pause from '@mui/icons-material/Pause'
 const PlayPauseButton = React.memo(({ isActive, toggle }) => {
   return (
     <IconButton color="primary" variant="contained" onClick={toggle}>
-      {isActive ? <Pause /> : <PlayArrow />}
+      {isActive ? <Pause fontSize="large" /> : <PlayArrow fontSize="large" />}
     </IconButton>
   )
 })

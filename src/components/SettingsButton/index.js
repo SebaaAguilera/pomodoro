@@ -5,8 +5,8 @@ import Settings from '@mui/icons-material/Settings'
 
 const SettingsButton = ({ showSettings }) => {
   return (
-    <IconButton color="secondary" onClick={showSettings}>
-      <Settings />
+    <IconButton color="primary" onClick={showSettings}>
+      <Settings fontSize="large" />
     </IconButton>
   )
 }

@@ -39,8 +39,8 @@ export default function Home() {
       <Typography
         variant="h2"
         component="div"
+        fontWeight={700}
         style={{
-          fontWeight: 700,
           marginBottom: "20px"
         }}
       >
@@ -74,7 +74,7 @@ export default function Home() {
         <Button href="/pomodoro" variant="contained" color="primary">
           Create a Room
         </Button>
-        <Button href="/" variant="contained" color="secondary">
+        <Button href="/" variant="outlined" color="primary">
           Join a Room
         </Button>
       </div>

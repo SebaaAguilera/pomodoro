@@ -1,10 +1,18 @@
 import React from 'react'
-import { Typography, Link } from '@mui/material'
+import Typography from '@mui/material/Typography'
+import Link from '@mui/material/Link'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from '@mui/material'
 
 function Footer() {
+  
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   return (
     <div style={{
       display: "flex",
+      flexDirection: isMobile ? 'column' : 'row',
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: "center",
@@ -21,10 +29,12 @@ function Footer() {
           Developed by NeuralWorks
         </Typography>
         <Link href="/" color="inherit" style={{ marginLeft: 8 }}>
-          Privacy Policy
+          <Typography variant="body2">
+            Privacy Policy
+          </Typography>
         </Link>
     </div>
   );
 }
 
-export default Footer;
+export default Footer

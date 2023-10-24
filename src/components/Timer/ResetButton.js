@@ -5,8 +5,8 @@ import Replay from '@mui/icons-material/Replay'
 // Memoize component, so it's not re-render on timer changes
 const ResetButton = React.memo(({ reset }) => {
   return (
-    <IconButton color="secondary" onClick={reset}>
-      <Replay />
+    <IconButton color="primary" onClick={reset}>
+      <Replay fontSize="large" />
     </IconButton>
   )
 })

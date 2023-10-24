@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react'
 import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
 import DefaultLayout from '@/layouts/DefaultLayout'
 import SettingsButton from '@/components/SettingsButton'
 import Timer from '@/components/Timer'
 import TimerSelect from '@/components/TimerSelect'
 import TimerSettings from '@/components/TimerSettings'
-
 
 export default function Pomodoro() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
@@ -21,7 +21,15 @@ export default function Pomodoro() {
   }, [])
 
   return (
-    <Container maxWidth="sm" sx={{ marginTop: "20px"}}>
+    <Container
+      maxWidth="xs"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '100vh'
+      }}
+    >
       {
         isSettingsOpen ?
         <TimerSettings
@@ -31,7 +39,13 @@ export default function Pomodoro() {
         />
         :
         <>
-          <div style={{ display: "flex", justifyContent: "right"}}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+            <Typography
+              variant="h5"
+              fontWeight={700}
+            >
+              {timer.split('_').join(' ')}
+            </Typography>
             <SettingsButton
               showSettings={() => setIsSettingsOpen(true)}
             />
@@ -42,6 +56,7 @@ export default function Pomodoro() {
           />
           <TimerSelect
             timer={timer}
+            timersSeconds={timersSeconds}
             updateTimer={updateTimer}
           />
         </>
