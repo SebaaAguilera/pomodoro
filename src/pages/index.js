@@ -1,14 +1,16 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { useCallback, useState } from 'react'
+import SettingsButton from '@/components/SettingsButton'
 import Timer from '@/components/Timer'
 import TimerSelect from '@/components/TimerSelect'
-import TimerConfig from '@/components/TimerConfig'
+import TimerSettings from '@/components/TimerSettings'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [timer, setTimer] = useState('POMODORO')
   const [timersSeconds, setTimersSeconds] = useState({
     POMODORO: 25 * 60,
@@ -29,9 +31,30 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <TimerConfig timersSeconds={timersSeconds} setTimersSeconds={setTimersSeconds}/>
-        <Timer timer={timer} timersSeconds={timersSeconds}/>
-        <TimerSelect timer={timer} updateTimer={updateTimer}/>
+        {
+          isSettingsOpen ?
+          <TimerSettings
+            timersSeconds={timersSeconds}
+            setTimersSeconds={setTimersSeconds}
+            hideSettings={() => setIsSettingsOpen(false)}
+          />
+          :
+          <>
+            <div style={{ display: "flex", justifyContent: "right"}}>
+              <SettingsButton
+                showSettings={() => setIsSettingsOpen(true)}
+              />
+            </div>
+            <Timer
+              timer={timer}
+              timersSeconds={timersSeconds}
+            />
+            <TimerSelect
+              timer={timer}
+              updateTimer={updateTimer}
+            />
+          </>
+        }
       </main>
     </>
   )

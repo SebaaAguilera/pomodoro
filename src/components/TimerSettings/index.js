@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
-const TimerConfig = ({ timersSeconds, setTimersSeconds }) => {
+const TimerSettings = ({ timersSeconds, setTimersSeconds, hideSettings }) => {
   const pomodoroRef = useRef(null)
   const shortBreakRef = useRef(null)
   const longBreakRef = useRef(null)
@@ -16,6 +16,8 @@ const TimerConfig = ({ timersSeconds, setTimersSeconds }) => {
       SHORT_BREAK: parseInt(shortBreakRef.current.value),
       LONG_BREAK: parseInt(longBreakRef.current.value)
     })
+
+    hideSettings()
   }
 
   return (
@@ -57,4 +59,4 @@ const TimerConfig = ({ timersSeconds, setTimersSeconds }) => {
   )
 }
 
-export default TimerConfig
+export default TimerSettings
