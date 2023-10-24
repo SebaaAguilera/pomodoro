@@ -3,6 +3,11 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material'
 import { getTimeFromSeconds } from '@/utils/time'
 
+/**
+ * 
+ * TimerSelect component, it display the needed buttons to change the type of timer
+ * @component 
+ */
 const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
 
   const theme = useTheme()

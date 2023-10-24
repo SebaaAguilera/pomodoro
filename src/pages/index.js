@@ -11,6 +11,11 @@ import PeopleIcon from '@mui/icons-material/People'
 import SyncIcon from '@mui/icons-material/Sync'
 import Footer from '@/components/Footer'
 
+/**
+ * 
+ * CustomListItem, it wraps the item icon and content
+ * @component
+ */
 function CustomListItem({ children, icon }) {
   return (
     <ListItem>
@@ -24,6 +29,11 @@ function CustomListItem({ children, icon }) {
   );
 }
 
+/**
+ * 
+ * Home page, it shows the site description
+ * @component
+ */
 export default function Home() {
   return (
     <Container

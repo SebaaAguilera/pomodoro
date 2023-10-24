@@ -7,6 +7,11 @@ import Timer from '@/components/Timer'
 import TimerSelect from '@/components/TimerSelect'
 import TimerSettings from '@/components/TimerSettings'
 
+/**
+ * 
+ * Pomodoro page, it shows the site Timer, Settings and Select
+ * @component
+ */
 export default function Pomodoro() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [timer, setTimer] = useState('POMODORO')

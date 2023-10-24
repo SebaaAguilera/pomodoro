@@ -5,6 +5,11 @@ import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
+/**
+ * 
+ * DefaultLayout, it holds the Header and Footer
+ * @component
+ */
 export default function DefaultLayout({ children }) {
   return (
     <>

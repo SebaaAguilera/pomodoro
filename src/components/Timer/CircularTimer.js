@@ -2,11 +2,23 @@ import CircularProgress from '@mui/material/CircularProgress'
 import Typography from '@mui/material/Typography'
 import { getTimeFromSeconds } from '@/utils/time'
 
+/**
+ * 
+ * @param {{
+ *  value: Number,
+ *  total: Number
+ * }}
+ * @returns Progress percentage
+ */
 const getProgress = ({ value, total }) => {
-  return (value / total) * 100
+  return total <= 0 ? 0 : (value / total) * 100
 }
 
-const Timer = ({ secondsLeft, totalSeconds }) => {
+/**
+ * CircularTimer component, shows left time depending on its arguments 
+ * @component
+ */
+const CircularTimer = ({ secondsLeft, totalSeconds }) => {
   
   const progress = getProgress({ value: secondsLeft, total: totalSeconds })
   const formattedTime = getTimeFromSeconds(secondsLeft)
@@ -38,4 +50,4 @@ const Timer = ({ secondsLeft, totalSeconds }) => {
 
 
 
-export default Timer
+export default CircularTimer

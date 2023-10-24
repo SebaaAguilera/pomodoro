@@ -4,6 +4,10 @@ import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material'
 
+/**
+ * Header component, its fixed and change centering on mobile/desktop window
+ * @component  
+ */
 function Header() {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))

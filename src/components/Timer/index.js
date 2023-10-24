@@ -3,7 +3,12 @@ import CircularTimer from './CircularTimer'
 import PlayPauseButton from './PlayPauseButton'
 import ResetButton from './ResetButton'
 
-const PomodoroTimer = ({ timer, timersSeconds }) => {
+/**
+ * 
+ * Timer component, it holds all the timer logic depending on the type of the timer
+ * @component
+ */
+const Timer = ({ timer, timersSeconds }) => {
   const [isActive, setIsActive] = useState(false)
   const [secondsLeft, setSecondsLeft] = useState(0)
   
@@ -46,4 +51,4 @@ const PomodoroTimer = ({ timer, timersSeconds }) => {
   )
 }
 
-export default PomodoroTimer
+export default Timer

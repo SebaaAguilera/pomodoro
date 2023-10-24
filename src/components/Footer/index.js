@@ -4,6 +4,10 @@ import Link from '@mui/material/Link'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material'
 
+/**
+ * Footer component, its fixed and change flex orentation on mobile/desktop window
+ * @component  
+ */
 function Footer() {
   
   const theme = useTheme()

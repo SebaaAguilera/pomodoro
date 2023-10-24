@@ -1,8 +1,13 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
+/**
+ * 
+ * TimerSettings component, it display a form to change the timer times
+ * @component 
+ */
 const TimerSettings = ({ timersSeconds, setTimersSeconds, hideSettings }) => {
   const pomodoroRef = useRef(null)
   const shortBreakRef = useRef(null)

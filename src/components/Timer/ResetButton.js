@@ -2,7 +2,11 @@ import React from 'react'
 import IconButton from '@mui/material/IconButton'
 import Replay from '@mui/icons-material/Replay'
 
-// Memoize component, so it's not re-render on timer changes
+/**
+ * 
+ * PlayPauseButton, resets the timer, its memoized so it's doesn't re-render on timer changes
+ * @component
+ */
 const ResetButton = React.memo(({ reset }) => {
   return (
     <IconButton color="primary" onClick={reset}>
