@@ -1,4 +1,5 @@
 import React from 'react'
+import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -13,7 +14,7 @@ function Header() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <div style={{
+    <Box style={{
       display: 'flex',
       justifyContent: isMobile ? 'center' : 'left',
       alignItems: 'center',
@@ -31,14 +32,14 @@ function Header() {
           variant="h5"
           fontWeight={700}
           style={{
-            marginBottom: '20px',
+            marginBottom: 5,
             color: 'black'
           }}
           >
           NeuralClocks
         </Typography>
       </Button>
-    </div>
+    </Box>
   );
 }
 

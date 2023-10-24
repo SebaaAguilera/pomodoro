@@ -1,4 +1,5 @@
 import React from 'react'
+import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -14,7 +15,7 @@ function Footer() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <div style={{
+    <Box sx={{
       display: 'flex',
       flexDirection: isMobile ? 'column' : 'row',
       justifyContent: 'center',
@@ -32,12 +33,12 @@ function Footer() {
         <Typography variant="body2">
           Developed by NeuralWorks
         </Typography>
-        <Link href="/" color="inherit" style={{ marginLeft: 8 }}>
+        <Link href="/" color="inherit" sx={{ marginLeft: 8 }}>
           <Typography variant="body2">
             Privacy Policy
           </Typography>
         </Link>
-    </div>
+    </Box>
   );
 }
 

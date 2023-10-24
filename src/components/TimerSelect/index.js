@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material'
@@ -18,13 +19,13 @@ const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
   const longBreakTime = getTimeFromSeconds(timersSeconds.LONG_BREAK)
 
   return (
-    <div
-      style={{
-        marginTop: '20px',
+    <Box
+      sx={{
+        marginTop: 4,
         display: 'flex',
         justifyContent: 'center',
         flexDirection: isMobile ? 'column' : 'row',
-        gap: 10
+        gap: 2
       }}>
       {
         isPomodoro ?
@@ -56,7 +57,7 @@ const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
           Back to Pomodoro
         </Button>
       }
-    </div>
+    </Box>
   )
 }
 

@@ -31,7 +31,7 @@ const TimeField = ({ label, value, onChange }) => {
   };
 
   return (
-    <Box display="flex" alignItems="center" sx={{ gap: 2 }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, marginBottom: 2 }}>
       <Box sx={{ flex: 1 }}>
         <InputLabel>{label}</InputLabel>
       </Box>
@@ -39,7 +39,6 @@ const TimeField = ({ label, value, onChange }) => {
         <TextField
           type="number"
           fullWidth
-          sx={{ marginBottom: '10px' }}
           value={minutes}
           onChange={handleMinutesChange}
           inputProps={{ min: 0 }}
@@ -49,7 +48,6 @@ const TimeField = ({ label, value, onChange }) => {
         <TextField
           type="number"
           fullWidth
-          sx={{ marginBottom: '10px' }}
           value={seconds}
           onChange={handleSecondsChange}
           inputProps={{ min: 0, max: 59 }}

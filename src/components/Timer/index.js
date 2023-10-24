@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import Box from '@mui/material/Box'
 import CircularTimer from './CircularTimer'
 import PlayPauseButton from './PlayPauseButton'
 import ResetButton from './ResetButton'
@@ -43,10 +44,10 @@ const Timer = ({ timer, timersSeconds }) => {
   return (
     <>
       <CircularTimer isActive={isActive} secondsLeft={secondsLeft} totalSeconds={timersSeconds[timer]}/>
-      <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ marginTop: 4, display: 'flex', justifyContent: 'center' }}>
         <PlayPauseButton isActive={isActive} toggle={toggleTimer}/>
         <ResetButton reset={resetTimer}/>
-      </div>
+      </Box>
     </>
   )
 }

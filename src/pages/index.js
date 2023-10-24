@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
@@ -50,8 +51,8 @@ export default function Home() {
         variant="h2"
         component="div"
         fontWeight={700}
-        style={{
-          marginBottom: '20px'
+        sx={{
+          marginBottom: 5
         }}
       >
         NeuralClocks
@@ -80,14 +81,14 @@ export default function Home() {
         Enjoy distraction-free work sessions that enhance your productivity with NeuralClocks. Experience the difference today.
       </Typography>
 
-      <div style={{ display: 'flex', gap: 10, marginTop: '25px' }}>
+      <Box sx={{ display: 'flex', gap: 2, marginTop: 5 }}>
         <Button href="/pomodoro" variant="contained" color="primary">
           Create a Room
         </Button>
         <Button href="/" variant="outlined" color="primary">
           Join a Room
         </Button>
-      </div>
+      </Box>
     </Container>
   )
 }

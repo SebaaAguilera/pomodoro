@@ -1,4 +1,5 @@
 import CircularProgress from '@mui/material/CircularProgress'
+import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { getTimeFromSeconds } from '@/utils/time'
 
@@ -24,7 +25,7 @@ const CircularTimer = ({ secondsLeft, totalSeconds }) => {
   const formattedTime = getTimeFromSeconds(secondsLeft)
 
   return (
-    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+    <Box style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
       <CircularProgress
           variant="determinate"
           value={progress}
@@ -44,7 +45,7 @@ const CircularTimer = ({ secondsLeft, totalSeconds }) => {
         >
           {formattedTime}
         </Typography>
-    </div>
+    </Box>
   )
 }
 

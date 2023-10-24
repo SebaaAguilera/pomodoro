@@ -6,6 +6,7 @@ import SettingsButton from '@/components/SettingsButton'
 import Timer from '@/components/Timer'
 import TimerSelect from '@/components/TimerSelect'
 import TimerSettings from '@/components/TimerSettings'
+import Box from '@mui/material/Box'
 
 /**
  * 
@@ -44,7 +45,7 @@ export default function Pomodoro() {
         />
         :
         <>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
             <Typography
               variant="h5"
               fontWeight={700}
@@ -54,7 +55,7 @@ export default function Pomodoro() {
             <SettingsButton
               showSettings={() => setIsSettingsOpen(true)}
             />
-          </div>
+          </Box>
           <Timer
             timer={timer}
             timersSeconds={timersSeconds}

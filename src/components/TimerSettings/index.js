@@ -49,7 +49,7 @@ const TimerSettings = ({ timersSeconds, setTimersSeconds, hideSettings }) => {
         onChange={(value) => setLongBreakSeconds(value)}
       />
 
-      <Button variant="contained" type="submit" fullWidth> Apply </Button>
+      <Button variant="contained" type="submit" fullWidth sx={{ marginTop: 2 }}> Apply </Button>
     </Box>
   )
 }
