@@ -1,6 +1,8 @@
-
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +16,25 @@ export default function DefaultLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={inter.className}>
+        <div style={{ display: "flex", justifyContent: "left" }}>
+            <Button
+              sx={{textTransform: "none"}}
+              href="/"
+            >   
+              <Typography
+                variant="h5"
+                style={{
+                  fontWeight: 700,
+                  marginBottom: "20px",
+                  color: "black"
+                }}
+              >
+                NeuralClocks
+              </Typography>
+            </Button>
+        </div>
         { children }
+        <Footer />
       </main>
     </>
 )

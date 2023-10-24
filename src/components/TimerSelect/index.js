@@ -3,14 +3,13 @@ import Button from '@mui/material/Button'
 const TimerSelect = ({ timer, updateTimer }) => {
   const isPomodoro = timer === 'POMODORO'
   return (
-    <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
+    <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', gap: 10 }}>
       {
         isPomodoro ?
         <>
           <Button
             variant="contained"
             color="primary"
-            sx={{ marginRight: 2 }}
             onClick={updateTimer("SHORT_BREAK")}
           >
             Short break
