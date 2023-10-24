@@ -32,11 +32,12 @@ const TimeField = ({ label, value, onChange }) => {
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, marginBottom: 2 }}>
-      <Box sx={{ flex: 1 }}>
+      <Box sx={{ flex: 0.4 }}>
         <InputLabel>{label}</InputLabel>
       </Box>
-      <Box sx={{ flex: 1 }}>
+      <Box sx={{ flex: 0.3 }}>
         <TextField
+          label="Minutes"
           type="number"
           fullWidth
           value={minutes}
@@ -44,8 +45,12 @@ const TimeField = ({ label, value, onChange }) => {
           inputProps={{ min: 0 }}
         />
       </Box>
-      <Box sx={{ flex: 1 }}>
+      <Box sx={{ textAlign: 'center' }}>
+        :
+      </Box>
+      <Box sx={{ flex: 0.3 }}>
         <TextField
+          label="Seconds"
           type="number"
           fullWidth
           value={seconds}
