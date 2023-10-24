@@ -12,6 +12,6 @@ const PlayPauseButton = React.memo(({ isActive, toggle }) => {
   )
 })
 
-PlayPauseButton.displayName = "PlayPauseButton"
+PlayPauseButton.displayName = 'PlayPauseButton'
 
 export default PlayPauseButton

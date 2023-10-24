@@ -41,7 +41,7 @@ export default function Home() {
         component="div"
         fontWeight={700}
         style={{
-          marginBottom: "20px"
+          marginBottom: '20px'
         }}
       >
         NeuralClocks
@@ -70,7 +70,7 @@ export default function Home() {
         Enjoy distraction-free work sessions that enhance your productivity with NeuralClocks. Experience the difference today.
       </Typography>
 
-      <div style={{ display: "flex", gap: 10, marginTop: "25px" }}>
+      <div style={{ display: 'flex', gap: 10, marginTop: '25px' }}>
         <Button href="/pomodoro" variant="contained" color="primary">
           Create a Room
         </Button>

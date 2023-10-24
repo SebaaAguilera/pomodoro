@@ -39,7 +39,7 @@ export default function Pomodoro() {
         />
         :
         <>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Typography
               variant="h5"
               fontWeight={700}

@@ -11,15 +11,15 @@ function Footer() {
 
   return (
     <div style={{
-      display: "flex",
+      display: 'flex',
       flexDirection: isMobile ? 'column' : 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      textAlign: "center",
+      textAlign: 'center',
       gap: 10,
-      position: "fixed",
+      position: 'fixed',
       bottom: 0,
-      width: "100%",
+      width: '100%',
       paddingInline: 10
     }}>
         <Typography variant="body2">

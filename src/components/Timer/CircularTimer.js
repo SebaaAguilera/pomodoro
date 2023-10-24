@@ -18,7 +18,6 @@ const Timer = ({ secondsLeft, totalSeconds }) => {
           value={progress}
           size={250}
           thickness={4}
-          sx={{ clipPath: 'circle(50% at 50% 50%)' }}
         />
         <Typography
           variant="h2"

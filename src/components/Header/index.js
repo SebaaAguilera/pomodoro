@@ -10,25 +10,25 @@ function Header() {
 
   return (
     <div style={{
-      display: "flex",
-      justifyContent: isMobile ? "center" : "left",
-      alignItems: "center",
-      textAlign: "center",
-      position: "fixed",
+      display: 'flex',
+      justifyContent: isMobile ? 'center' : 'left',
+      alignItems: 'center',
+      textAlign: 'center',
+      position: 'fixed',
       top: 0,
-      width: "100%",
+      width: '100%',
       paddingInline: 10
     }}>
       <Button
-        sx={{textTransform: "none"}}
+        sx={{ textTransform: 'none' }}
         href="/"
       >   
         <Typography
           variant="h5"
           fontWeight={700}
           style={{
-            marginBottom: "20px",
-            color: "black"
+            marginBottom: '20px',
+            color: 'black'
           }}
           >
           NeuralClocks

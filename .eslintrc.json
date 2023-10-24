@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // Enforce single quotes in JavaScript code
+    "quotes": ["error", "single"],
+
+    // Enforce double quotes in JSX
+    "jsx-quotes": ["error", "prefer-double"],
+    
+    // Spaces inside curly braces for objects
+    "object-curly-spacing": ["error", "always"],
+
+    // Enforce spaces after commas
+    "comma-spacing": ["error", { "before": false, "after": true }]
+  }
 }

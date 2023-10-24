@@ -27,16 +27,16 @@ const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
           <Button
             variant="contained"
             color="primary"
-            onClick={updateTimer("SHORT_BREAK")}
-            sx={{ width: isMobile ? "100%" : "50%" }}
+            onClick={updateTimer('SHORT_BREAK')}
+            sx={{ width: isMobile ? '100%' : '50%' }}
           >
             Short break - { shortBreakTime }
           </Button>
           <Button
             variant="contained"
             color="primary"
-            onClick={updateTimer("LONG_BREAK")}
-            sx={{ width: isMobile ? "100%" : "50%" }}
+            onClick={updateTimer('LONG_BREAK')}
+            sx={{ width: isMobile ? '100%' : '50%' }}
           >
             Long break - { longBreakTime }
           </Button>
@@ -45,7 +45,7 @@ const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
         <Button
           variant="outlined"
           color="primary"
-          onClick={updateTimer("POMODORO")}
+          onClick={updateTimer('POMODORO')}
           fullWidth
           >
           Back to Pomodoro

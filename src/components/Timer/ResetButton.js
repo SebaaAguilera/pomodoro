@@ -11,6 +11,6 @@ const ResetButton = React.memo(({ reset }) => {
   )
 })
 
-ResetButton.displayName = "ResetButton"
+ResetButton.displayName = 'ResetButton'
 
 export default ResetButton
