@@ -1,8 +1,8 @@
-const getMinutes = (seconds) => {
+export const getMinutes = (seconds) => {
   return Math.floor(seconds / 60)
 }
 
-const getSecondsRest = (seconds) => {
+export const getSecondsRest = (seconds) => {
   return seconds % 60
 }
 

@@ -1,7 +1,7 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
+import TimeField from './TimeField'
 
 /**
  * 
@@ -9,17 +9,18 @@ import TextField from '@mui/material/TextField'
  * @component 
  */
 const TimerSettings = ({ timersSeconds, setTimersSeconds, hideSettings }) => {
-  const pomodoroRef = useRef(null)
-  const shortBreakRef = useRef(null)
-  const longBreakRef = useRef(null)
+
+  const [pomodoroSeconds, setPomodoroSeconds] = useState(timersSeconds.POMODORO)
+  const [shortBreakSeconds, setShortBreakSeconds] = useState(timersSeconds.SHORT_BREAK)
+  const [longBreakSeconds, setLongBreakSeconds] = useState(timersSeconds.LONG_BREAK)
 
   const onSubmit = (e) => {
     e.preventDefault()
 
     setTimersSeconds({
-      POMODORO: parseInt(pomodoroRef.current.value),
-      SHORT_BREAK: parseInt(shortBreakRef.current.value),
-      LONG_BREAK: parseInt(longBreakRef.current.value)
+      POMODORO: parseInt(pomodoroSeconds),
+      SHORT_BREAK: parseInt(shortBreakSeconds),
+      LONG_BREAK: parseInt(longBreakSeconds)
     })
 
     hideSettings()
@@ -32,33 +33,22 @@ const TimerSettings = ({ timersSeconds, setTimersSeconds, hideSettings }) => {
       autoComplete="off"
       onSubmit={onSubmit}
     >
-      <TextField
-        inputRef={pomodoroRef}
+      <TimeField
         label="Pomodoro"
-        fullWidth
-        sx={{ marginBottom: '10px' }}
-        type="number"
-        defaultValue={timersSeconds.POMODORO}
-        inputProps={{ min: 1 }}
+        value={timersSeconds.POMODORO}
+        onChange={(value) => setPomodoroSeconds(value)}
       />
-      <TextField
-        inputRef={shortBreakRef}
+      <TimeField
         label="Short Break"
-        fullWidth
-        sx={{ marginBottom: '10px' }}
-        type="number"
-        defaultValue={timersSeconds.SHORT_BREAK}
-        inputProps={{ min: 1 }}
+        value={timersSeconds.SHORT_BREAK}
+        onChange={(value) => setShortBreakSeconds(value)}
       />
-      <TextField
-        inputRef={longBreakRef}
+      <TimeField
         label="Long Break"
-        fullWidth
-        sx={{ marginBottom: '10px' }}
-        type="number"
-        defaultValue={timersSeconds.LONG_BREAK}
-        inputProps={{ min: 1 }}
+        value={timersSeconds.LONG_BREAK}
+        onChange={(value) => setLongBreakSeconds(value)}
       />
+
       <Button variant="contained" type="submit" fullWidth> Apply </Button>
     </Box>
   )

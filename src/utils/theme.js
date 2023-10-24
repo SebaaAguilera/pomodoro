@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material'
 
+// default theme
 export const defaultTheme = createTheme({
   typography: {
     fontFamily: 'Roboto, sans-serif'
