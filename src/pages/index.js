@@ -2,33 +2,14 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemIcon from '@mui/material/ListItemIcon'
 import WorkIcon from '@mui/icons-material/Work'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import PeopleIcon from '@mui/icons-material/People'
 import SyncIcon from '@mui/icons-material/Sync'
 import Footer from '@/components/Footer'
 import ResponsiveContainer from '@/components/ResponsiveContainer'
-
-/**
- * 
- * CustomListItem, it wraps the item icon and content
- * @component
- */
-function CustomListItem({ children, icon }) {
-  return (
-    <ListItem>
-      <ListItemIcon>
-        {icon}
-      </ListItemIcon>
-      <ListItemText primaryTypographyProps={{ variant: 'body1' }}>
-        {children}
-      </ListItemText>
-    </ListItem>
-  );
-}
+import Title from '@/components/Home/Title'
+import CustomListItem from '@/components/Home/CustomListItem'
 
 /**
  * 
@@ -38,15 +19,8 @@ function CustomListItem({ children, icon }) {
 export default function Home() {
   return (
     <ResponsiveContainer maxWidth="sm">
-      <Box sx={{ paddingTop: 2, marginBottom: 4 }}>
-        <Typography
-          variant="h2"
-          component="div"
-          fontWeight={700}
-          sx={{ marginBottom: 4 }}
-          >
-          NeuralClocks
-        </Typography>
+      <Box sx={{ marginBottom: 4 }}>
+        <Title />
 
         <Typography variant="body1" paragraph>
           Immerse yourself in productivity with NeuralClocks, our streamlined Pomodoro Timer, meticulously crafted by NeuralWorks Developers. Features include:

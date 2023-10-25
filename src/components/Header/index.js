@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/system'
+import AvTimerIcon from '@mui/icons-material/AvTimer'
 
 // Responsive Design so it fits the device
 const ResponsiveBox = styled(Box)(({ theme }) => ({
@@ -32,9 +33,12 @@ function Header() {
           fontWeight={700}
           style={{
             marginBottom: 5,
-            color: 'black'
+            color: 'black',
+            display: 'flex',
+            alignItems: 'center'
           }}
-          >
+        >
+          <AvTimerIcon fontSize="inherit"/>
           NeuralClocks
         </Typography>
       </Button>
