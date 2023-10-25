@@ -7,14 +7,14 @@ import ListItemIcon from '@mui/material/ListItemIcon'
  * CustomListItem, it wraps the item icon and content
  * @component
  */
-const  CustomListItem = ({ children, icon }) => {
+const  CustomListItem = ({ title, description, icon }) => {
   return (
     <ListItem>
       <ListItemIcon>
         {icon}
       </ListItemIcon>
       <ListItemText primaryTypographyProps={{ variant: 'body1' }}>
-        {children}
+      <strong>{ title }</strong> { description }
       </ListItemText>
     </ListItem>
   )
