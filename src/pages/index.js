@@ -1,5 +1,4 @@
 import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
@@ -11,6 +10,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import PeopleIcon from '@mui/icons-material/People'
 import SyncIcon from '@mui/icons-material/Sync'
 import Footer from '@/components/Footer'
+import ResponsiveContainer from '@/components/ResponsiveContainer'
 
 /**
  * 
@@ -37,23 +37,13 @@ function CustomListItem({ children, icon }) {
  */
 export default function Home() {
   return (
-    <Container
-      maxWidth="sm"
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh'
-      }}
-      >
-      
-      <Box sx={{ marginBottom: 4 }}>
+    <ResponsiveContainer maxWidth="sm">
+      <Box sx={{ paddingTop: 2, marginBottom: 4 }}>
         <Typography
           variant="h2"
           component="div"
           fontWeight={700}
-          sx={{ marginTop: 10, marginBottom: 4 }}
+          sx={{ marginBottom: 4 }}
           >
           NeuralClocks
         </Typography>
@@ -83,7 +73,7 @@ export default function Home() {
       </Box>
 
       
-      <Box sx={{ display: 'flex', gap: 2, marginBottom: 15 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, marginBottom: 3 }}>
         <Button href="/pomodoro" variant="contained" color="primary">
           Create a Room
         </Button>
@@ -91,7 +81,7 @@ export default function Home() {
           Join a Room
         </Button>
       </Box>
-    </Container>
+    </ResponsiveContainer>
   )
 }
 

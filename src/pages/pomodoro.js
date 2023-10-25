@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react'
-import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import DefaultLayout from '@/layouts/DefaultLayout'
 import SettingsButton from '@/components/SettingsButton'
@@ -7,6 +6,7 @@ import Timer from '@/components/Timer'
 import TimerSelect from '@/components/TimerSelect'
 import TimerSettings from '@/components/TimerSettings'
 import Box from '@mui/material/Box'
+import ResponsiveContainer from '@/components/ResponsiveContainer'
 
 /**
  * 
@@ -27,15 +27,7 @@ export default function Pomodoro() {
   }, [])
 
   return (
-    <Container
-      maxWidth="xs"
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        height: '100vh'
-      }}
-    >
+    <ResponsiveContainer maxWidth="xs">
       {
         isSettingsOpen ?
         <TimerSettings
@@ -67,7 +59,7 @@ export default function Pomodoro() {
           />
         </>
       }
-    </Container>
+    </ResponsiveContainer>
   )
 }
 

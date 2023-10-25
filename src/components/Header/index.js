@@ -2,28 +2,27 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/material'
+import { styled } from '@mui/system'
+
+// Responsive Design so it fits the device
+const ResponsiveBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    position: 'fixed',
+    top: 0,
+  },
+}));
 
 /**
- * Header component, its fixed and change centering on mobile/desktop window
+ * Header component, its fixed
  * @component  
  */
 function Header() {
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Box style={{
-      display: 'flex',
-      justifyContent: isMobile ? 'center' : 'left',
-      alignItems: 'center',
-      textAlign: 'center',
-      position: 'fixed',
-      top: 0,
-      width: '100%',
-      paddingInline: 10
-    }}>
+    <ResponsiveBox>
       <Button
         sx={{ textTransform: 'none' }}
         href="/"
@@ -39,8 +38,8 @@ function Header() {
           NeuralClocks
         </Typography>
       </Button>
-    </Box>
-  );
+    </ResponsiveBox>
+  )
 }
 
 export default Header

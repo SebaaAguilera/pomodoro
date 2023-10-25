@@ -2,8 +2,22 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/material'
+import { styled } from '@mui/system'
+
+// Responsive Design so it fits the device
+const ResponsiveBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  textAlign: 'center',
+  flexDirection: 'column',
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    flexDirection: 'row',
+    position: 'fixed',
+    bottom: 0,
+    paddingInline: 10,
+  },
+}));
 
 /**
  * Footer component, its fixed and change flex orentation on mobile/desktop window
@@ -11,20 +25,8 @@ import { useTheme } from '@mui/material'
  */
 function Footer() {
   
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-
   return (
-    <Box sx={{
-      display: 'flex',
-      flexDirection: isMobile ? 'column' : 'row',
-      alignItems: 'center',
-      textAlign: 'center',
-      position: isMobile ? '' : 'fixed',
-      bottom: 0,
-      width: '100%',
-      paddingInline: 10
-    }}>
+    <ResponsiveBox>
       <Box sx={{ flex: 1 }}>
         <Typography variant="body2">
           © {new Date().getFullYear()} NeuralClocks. All rights reserved.
@@ -42,8 +44,8 @@ function Footer() {
           </Typography>
         </Link>
       </Box>
-    </Box>
-  );
+    </ResponsiveBox>
+  )
 }
 
 export default Footer
