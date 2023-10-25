@@ -18,7 +18,7 @@ const Title = () => {
       variant={variant}
       component="div"
       fontWeight={700}
-      sx={{ marginBottom: 4, display: 'flex', alignItems: 'center' }}
+      sx={{ marginTop: 4, marginBottom: 1, display: 'flex', alignItems: 'center' }}
     >
       <AvTimerIcon fontSize="inherit"/>
       NeuralClocks

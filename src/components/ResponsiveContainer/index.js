@@ -9,7 +9,7 @@ const ResponsiveContainer = styled(Container)(({ theme }) => ({
   height: '100vh',
   [theme.breakpoints.down('sm')]: {
     height: 'auto',
-    marginBottom: 4
+    marginBottom: 20
   },
 }))
 

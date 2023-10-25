@@ -20,10 +20,10 @@ export default function DefaultLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={inter.className}>
-        <Header />
-        { children }
-        <Footer />
+          <Header />
+          { children }
+          <Footer />
       </main>
     </>
-)
+  )
 }

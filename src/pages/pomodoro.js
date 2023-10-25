@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import Typography from '@mui/material/Typography'
 import DefaultLayout from '@/layouts/DefaultLayout'
 import SettingsButton from '@/components/SettingsButton'
@@ -21,10 +21,6 @@ export default function Pomodoro() {
     SHORT_BREAK: 5 * 60,
     LONG_BREAK: 20 * 60,
   })
-
-  const updateTimer = useCallback((newTimer) => () => {
-    setTimer(newTimer)
-  }, [])
 
   return (
     <ResponsiveContainer maxWidth="xs">
@@ -55,7 +51,7 @@ export default function Pomodoro() {
           <TimerSelect
             timer={timer}
             timersSeconds={timersSeconds}
-            updateTimer={updateTimer}
+            setTimer={setTimer}
           />
         </>
       }

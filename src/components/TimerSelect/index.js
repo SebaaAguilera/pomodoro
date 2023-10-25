@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -9,7 +10,7 @@ import { getTimeFromSeconds } from '@/utils/time'
  * TimerSelect component, it display the needed buttons to change the type of timer
  * @component 
  */
-const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
+const TimerSelect = ({ timer, timersSeconds, setTimer }) => {
 
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
@@ -25,6 +26,7 @@ const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
         display: 'flex',
         justifyContent: 'center',
         flexDirection: isMobile ? 'column' : 'row',
+        minHeight: isMobile ? '100px' : 0,
         gap: 2
       }}>
       {
@@ -33,15 +35,15 @@ const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
           <Button
             variant="contained"
             color="primary"
-            onClick={updateTimer('SHORT_BREAK')}
+            onClick={() => setTimer('SHORT_BREAK')}
             sx={{ width: isMobile ? '100%' : '50%' }}
-          >
+            >
             Short break - { shortBreakTime }
           </Button>
           <Button
             variant="contained"
             color="primary"
-            onClick={updateTimer('LONG_BREAK')}
+            onClick={() => setTimer('LONG_BREAK')}
             sx={{ width: isMobile ? '100%' : '50%' }}
           >
             Long break - { longBreakTime }
@@ -51,7 +53,7 @@ const TimerSelect = ({ timer, timersSeconds, updateTimer }) => {
         <Button
           variant="outlined"
           color="primary"
-          onClick={updateTimer('POMODORO')}
+          onClick={() => setTimer('POMODORO')}
           fullWidth
           >
           Back to Pomodoro

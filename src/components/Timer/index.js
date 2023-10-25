@@ -12,13 +12,15 @@ import ResetButton from './ResetButton'
 const Timer = ({ timer, timersSeconds }) => {
   const [isActive, setIsActive] = useState(false)
   const [secondsLeft, setSecondsLeft] = useState(0)
+  const [totalSeconds, setTotalSeconds] = useState(0) // redundant state so the re-renders are consistent
   
-  const toggleTimer = useCallback(() => {
+  const toggleIsActive = useCallback(() => {
     setIsActive(prevIsActive => !prevIsActive)
   }, [])
 
   const resetTimer = useCallback(() => {
     setIsActive(false)
+    setTotalSeconds(timersSeconds[timer])
     setSecondsLeft(timersSeconds[timer])
   }, [timer, timersSeconds])
 
@@ -43,9 +45,9 @@ const Timer = ({ timer, timersSeconds }) => {
   
   return (
     <>
-      <CircularTimer isActive={isActive} secondsLeft={secondsLeft} totalSeconds={timersSeconds[timer]}/>
+      <CircularTimer secondsLeft={secondsLeft} totalSeconds={totalSeconds}/>
       <Box sx={{ marginTop: 4, display: 'flex', justifyContent: 'center' }}>
-        <PlayPauseButton isActive={isActive} toggle={toggleTimer}/>
+        <PlayPauseButton isActive={isActive} toggle={toggleIsActive}/>
         <ResetButton reset={resetTimer}/>
       </Box>
     </>
