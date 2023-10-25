@@ -30,12 +30,11 @@ const Timer = ({ timer, timersSeconds }) => {
 
   useEffect(() => {
     let interval
-    if (isActive && secondsLeft > 0) {
+    if (isActive && secondsLeft > 0) { // If any time left -> Update
       interval = setInterval(() => {
         setSecondsLeft(secondsLeft => secondsLeft - 1)
       }, 1000)
-    } else if (isActive && secondsLeft === 0) {
-      // Handle timer completion (e.g., display a notification)
+    } else if (isActive && secondsLeft === 0) { // Else -> clear interval and show a notification or something
       clearInterval(interval)
     }
     return () => {
