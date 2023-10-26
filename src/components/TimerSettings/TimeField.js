@@ -21,15 +21,16 @@ const TimeField = ({ label, value, onChange }) => {
   const handleMinutesChange = (e) => {
     const newMinutes = parseInt(e.target.value) || 0;
     setMinutes(newMinutes);
-    onChange(newMinutes * 60 + seconds);
-  };
+    onChange(newMinutes * 60 + seconds)
+  }
 
   const handleSecondsChange = (e) => {
     const newSeconds = parseInt(e.target.value) || 0;
     setSeconds(newSeconds);
-    onChange(minutes * 60 + newSeconds);
-  };
+    onChange(minutes * 60 + newSeconds)
+  }
 
+  // onClick doesn't work properly on smartphones
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, marginBottom: 2 }}>
       <Box sx={{ flex: 0.4 }}>
@@ -41,8 +42,7 @@ const TimeField = ({ label, value, onChange }) => {
           type="number"
           fullWidth
           value={minutes}
-          onChange={handleMinutesChange}
-          inputProps={{ min: 0 }}
+          inputProps={{ min: 0, onInput: handleMinutesChange }}
         />
       </Box>
       <Box sx={{ textAlign: 'center' }}>
@@ -55,7 +55,7 @@ const TimeField = ({ label, value, onChange }) => {
           fullWidth
           value={seconds}
           onChange={handleSecondsChange}
-          inputProps={{ min: 0, max: 59 }}
+          inputProps={{ min: 0, max: 59,  onInput: handleMinutesChange }}
         />
       </Box>
     </Box>

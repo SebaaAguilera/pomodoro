@@ -8,6 +8,7 @@ import TimerSelect from '@/components/TimerSelect'
 import TimerSettings from '@/components/TimerSettings'
 import Box from '@mui/material/Box'
 import ResponsiveContainer from '@/components/ResponsiveContainer'
+import { defaultTimers } from '@/utils/constants'
 
 /**
  * Pomodoro Page
@@ -43,11 +44,7 @@ import ResponsiveContainer from '@/components/ResponsiveContainer'
 export default function Pomodoro() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [timer, setTimer] = useState('POMODORO')
-  const [timersSeconds, setTimersSeconds] = useState({
-    POMODORO: 25 * 60,
-    SHORT_BREAK: 5 * 60,
-    LONG_BREAK: 20 * 60,
-  })
+  const [timersSeconds, setTimersSeconds] = useState(defaultTimers)
 
   return (
     <ResponsiveContainer maxWidth="xs">
