@@ -38,7 +38,8 @@ function Footer() {
         </Typography>
       </Box>
       <Box sx={{ flex: 1 }}>
-        <Link href="/" color="inherit">
+        <Link color="inherit" sx={{ cursor: 'pointer' }}> 
+          {/* Cursor pointer to fake link behaviour  */}
           <Typography variant="body2">
             Privacy Policy
           </Typography>

@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -7,7 +6,7 @@ import { getTimeFromSeconds } from '@/utils/time'
 
 /**
  * 
- * TimerSelect component, it display the needed buttons to change the type of timer
+ * TimerSelect component, it displays the needed buttons to change the type of timer
  * @component 
  */
 const TimerSelect = ({ timer, timersSeconds, setTimer }) => {

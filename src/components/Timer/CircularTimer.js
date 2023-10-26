@@ -25,7 +25,7 @@ const CircularTimer = ({ secondsLeft, totalSeconds }) => {
   const formattedTime = getTimeFromSeconds(secondsLeft)
 
   return (
-    <Box style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
       <CircularProgress
           variant="determinate"
           value={progress}
