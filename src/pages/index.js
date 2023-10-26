@@ -10,6 +10,7 @@ import Footer from '@/components/Footer'
 import ResponsiveContainer from '@/components/ResponsiveContainer'
 import Title from '@/components/Home/Title'
 import CustomListItem from '@/components/Home/CustomListItem'
+import HomeLayout from '@/layouts/HomeLayout'
 
 /**
  * Home Page
@@ -78,7 +79,7 @@ export default function Home() {
         <Button href="/pomodoro" variant="contained">
           Create a Room
         </Button>
-        <Button href="/" variant="outlined">
+        <Button variant="outlined">
           Join a Room
         </Button>
       </Box>
@@ -88,10 +89,5 @@ export default function Home() {
 
 // Smart approach to separate Layout and Page logic. This pattern enhances code modularity and readability
 Home.getLayout = function(page) {
-  return (
-    <>
-      {page}
-      <Footer />
-    </>
-  )
+  return <HomeLayout>{ page }</HomeLayout>
 }
